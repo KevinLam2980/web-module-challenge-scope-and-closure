@@ -42,6 +42,7 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+Closures have to do with where and which variables are accessible from where you are in your code. Such as var being global and const and let being block scope. 
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -63,9 +64,11 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+There is a closure because there is a function inside of the function that uses the name variable from its parents' parameter.
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+Each time dansRoll is called, it will produce a random number for the roll. 
 c. What is the lexical scope of `newRoll`? 
-
+the scope of newRoll is the parent of the function it in in, personalDice, as it had access to the name. 
 ### Task 2c - Exit Ticket
 
 Once you begin, you will have 15 minutes to answer the questions [here](https://app.codesignal.com/public-test/WjSzNh9gDrD8Xn8hw/enY3yPRP3nEm7E).

@@ -27,11 +27,12 @@ function processFirstItem(stringList, callback) {
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
- * 
+ * The differnce is that counter  1 makes use of a closure and the variable count is protected within the function. counter 2 uses a global counter variable
  * 2. Which of the two uses a closure? How can you tell?
- * 
+ * counter 1 has a closure because the nested function uses a variable from the function it  is nested in.
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
- *
+ *When you would like to protect the count variable from being over written by any code that might be added to the program later, as it is part of the function and protected. 
+ counter 2 is more concice and simple which might be better if you are only making a counter. 
 */
 
 // counter1 code
@@ -58,9 +59,11 @@ Write a function called `inning` that generates a random number of points that a
 
 function inning(/*Code Here*/){
 
-    /*Code Here*/
-
+    let points = Math.floor(Math.random()*3);
+    return points;
 }
+
+console.log(inning());
 
 /* Task 3: finalScore()
 
@@ -76,11 +79,21 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
+function finalScore(callBack, innings){
 
-  /*Code Here*/
+  let final = {Home: 0, Away: 0};
 
-}
+  for(let i = 0; i < innings; i++){
+     final.Home += callBack();
+     final.Away += callBack();
+    }
+    return final;
+  }  
+
+
+
+console.log(finalScore(inning, 9));
+
 
 /* Task 4: 
 
@@ -103,8 +116,20 @@ and returns the score at each pont in the game, like so:
 
 Final Score: 6 - 10 */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(callBack, innings) {
+let scores = {home: 0, away: 0};
+  for(let i = 1; i <= innings; i++){
+    if(i === 1){
+      console.log(`${i}st inning: ${scores.home += callBack()} - ${scores.away += callBack()}`)
+    }if(i === 2){
+      console.log(`${i}nd inning: ${scores.home += callBack()} - ${scores.away += callBack()}`)
+    }if(i === 3){
+      console.log(`${i}rd inning: ${scores.home += callBack()} - ${scores.away += callBack()}`)
+    } else {
+      console.log(`${i}th inning: ${scores.home += callBack()} - ${scores.away += callBack()}`)
+    }
+  }
+  return `Final Score: ${scores.home} - ${scores.away}`;
 }
 
-
+console.log(scoreboard(inning, 9));

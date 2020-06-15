@@ -100,6 +100,9 @@ addSix(21); // returns 27
 ```
 
 3. Research the differences between functional programming and object oriented programming. Then, describe the pros and cons of functional programming vs object-oriented programming. This is a common interview question and great practice!
+  The difference between funcitonal and objecct oriented programming is that in functional programming, functions are used where each function performs a specific tast. With object oriented programming, classes are used where instances of objects are created. Functional programming uses functions while object orientated programming likes to skew towards using methods. 
+  The pros to functional programming is that it since it uses pure functions, they are reliable, concise, and hold less risk of error. The pros of OOP is that objects and methods are very readable and easy to understand. The methods are correlated with objects so methods can be used efficiently, and OOP usually depends on states. 
+
 
 ## Resources
 
